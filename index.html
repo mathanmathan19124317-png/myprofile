@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mathan P | Full Stack & React Native Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0d10;--panel:#14171c;--line:#262b33;--ink:#e9e7e0;--mute:#8f98a5;--sig:#f2c230;--sig-ink:#0b0d10;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#0b0d10}}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Barlow,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;margin:0;line-height:1;letter-spacing:.01em}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sig);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(11,13,16,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+nav b{font:800 22px 'Big Shoulders Display',Impact,sans-serif;display:flex;align-items:center;gap:10px;letter-spacing:.04em}
+nav svg{width:34px;fill:var(--sig)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-weight:500;font-size:15px}
+nav ul a{text-decoration:none;color:var(--mute)}nav ul a:hover{color:var(--sig)}
+@media(max-width:640px){nav ul{gap:14px;font-size:13px}nav b span{display:none}}
+
+/* hero: the signal */
+.hero{position:relative;min-height:calc(100svh - 56px);display:grid;place-items:center;text-align:center;overflow:hidden;isolation:isolate}
+.beam{position:absolute;left:50%;bottom:-10%;width:min(1100px,150vw);height:130%;transform:translateX(-50%);z-index:-1;
+background:radial-gradient(ellipse 38% 34% at 50% 38%,rgba(242,194,48,.55),rgba(242,194,48,.16) 55%,transparent 75%),
+linear-gradient(to top,rgba(242,194,48,.22),transparent 70%);
+clip-path:polygon(44% 100%,56% 100%,100% 0,0 0);opacity:.9;animation:flick 6s ease-out 1}
+.skyline{position:absolute;left:0;right:0;bottom:0;height:150px;z-index:-1;background:
+linear-gradient(#0b0d10,#0b0d10) 0 100%/100% 38px no-repeat,
+repeating-linear-gradient(90deg,#10131a 0 38px,#0b0d10 38px 50px,#12161e 50px 96px,#0b0d10 96px 108px);
+-webkit-mask:linear-gradient(to top,#000 40%,transparent);mask:linear-gradient(to top,#000 40%,transparent)}
+.signal{width:min(300px,62vw);margin:0 auto 18px;filter:drop-shadow(0 0 22px rgba(242,194,48,.7))}
+.signal ellipse{fill:var(--sig)}.signal path{fill:var(--sig-ink)}
+.hero h1{font-size:clamp(64px,15vw,168px);font-weight:900;letter-spacing:.03em;text-shadow:0 4px 40px rgba(0,0,0,.6)}
+.hero p.role{font:600 clamp(20px,3.6vw,30px)/1.2 'Big Shoulders Display',Impact,sans-serif;color:var(--sig);margin:10px 0 18px;letter-spacing:.06em}
+.hero p.sub{max-width:560px;margin:0 auto 28px;color:#c9c6bd}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 26px;font-weight:600;text-decoration:none;border:2px solid var(--sig);clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:background .2s,color .2s}
+.btn.fill{background:var(--sig);color:var(--sig-ink)}.btn:hover{background:var(--ink);border-color:var(--ink);color:var(--sig-ink)}
+@keyframes flick{0%{opacity:0}8%{opacity:.9}12%{opacity:.2}18%{opacity:.9}24%{opacity:.4}30%,100%{opacity:.9}}
+
+section{padding:88px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(40px,7vw,64px);font-weight:900;margin-bottom:34px;display:flex;align-items:center;gap:16px}
+h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--sig),transparent)}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.about p{margin:0 0 16px;color:#cfccc3}
+.stats{display:grid;gap:14px}
+.stat{background:var(--panel);border-left:4px solid var(--sig);padding:14px 18px}
+.stat b{display:block;font:900 38px 'Big Shoulders Display',Impact,sans-serif;color:var(--sig)}
+.stat span{color:var(--mute);font-size:15px}
+
+.belt{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;background:var(--line);border:2px solid var(--line)}
+.slot{background:var(--panel);padding:22px}
+.slot h3{font-size:26px;font-weight:800;color:var(--sig);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:#1d222a;border:1px solid #2f3640;padding:3px 12px;font-size:15px;border-radius:2px}
+
+.log{position:relative;padding-left:30px;border-left:2px solid var(--line);display:grid;gap:34px}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:-39px;top:6px;width:16px;height:10px;background:var(--sig);clip-path:polygon(0 0,35% 35%,50% 0,65% 35%,100% 0,85% 100%,50% 70%,15% 100%)}
+.job h3{font-size:30px;font-weight:800}
+.job .where{color:var(--sig);font-weight:600}
+.when{color:var(--mute);font-size:15px;margin:2px 0 10px}
+ul.pts{margin:0;padding-left:18px;color:#cfccc3}
+ul.pts li{margin:4px 0}ul.pts li::marker{color:var(--sig)}
+
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.case{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--sig);padding:24px;display:flex;flex-direction:column;gap:12px;transition:transform .2s,border-color .2s}
+.case:hover{transform:translateY(-4px);border-color:var(--sig)}
+.case h3{font-size:30px;font-weight:800}
+.case ul{margin:0;padding-left:18px;color:#cfccc3;font-size:16px}.case li{margin:5px 0}.case li::marker{color:var(--sig)}
+.case .chips{margin-top:auto}
+
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.deg{background:var(--panel);padding:24px;border:1px solid var(--line)}
+.deg h3{font-size:28px;font-weight:800}.deg .cg{font:900 44px 'Big Shoulders Display',Impact,sans-serif;color:var(--sig)}
+.deg small{color:var(--mute);font-size:15px;display:block}
+
+.contact{text-align:center}
+.contact h2{justify-content:center}.contact h2::after{display:none}
+.contact p{max-width:520px;margin:0 auto 26px;color:#cfccc3}
+.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{padding:28px 0 36px;text-align:center;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){.beam{animation:none}html{scroll-behavior:auto}.case{transition:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<b><svg viewBox="0 0 200 100" aria-hidden="true"><path id="bat" d="M100 12 108 24 120 22 124 14C130 30 150 38 190 36 176 46 170 60 164 78 150 62 136 62 124 78L112 64 100 90 88 64 76 78C64 62 50 62 36 78 30 60 24 46 10 36 50 38 70 30 76 14L80 22 92 24Z"/></svg><span>MATHAN P</span></b>
+<ul><li><a href="#about">About</a></li><li><a href="#skills">Gadgets</a></li><li><a href="#experience">Missions</a></li><li><a href="#projects">Cases</a></li><li><a href="#contact">Contact</a></li></ul>
+</div></nav>
+
+<header class="hero">
+<div class="beam"></div><div class="skyline"></div>
+<div class="wrap">
+<svg class="signal" viewBox="0 0 240 150" role="img" aria-label="Bat signal"><ellipse cx="120" cy="75" rx="118" ry="73"/><g transform="translate(30 30) scale(.9)"><path d="M100 12 108 24 120 22 124 14C130 30 150 38 190 36 176 46 170 60 164 78 150 62 136 62 124 78L112 64 100 90 88 64 76 78C64 62 50 62 36 78 30 60 24 46 10 36 50 38 70 30 76 14L80 22 92 24Z"/></g></svg>
+<h1>MATHAN P</h1>
+<p class="role">Full Stack and React Native Developer</p>
+<p class="sub">I build fast, reliable web and mobile apps that keep working when the lights go out. MCA student, ready to protect your product from bugs.</p>
+<div class="btns"><a class="btn fill" href="#projects">See my work</a><a class="btn" href="#contact">Call the signal</a></div>
+</div>
+</header>
+
+<main>
+<section id="about"><div class="wrap">
+<h2>About</h2>
+<div class="about">
+<div>
+<p>I'm a full stack developer who builds mobile and web apps with React Native, React.js, Node.js and Firebase. I've worked on APIs, authentication and databases, from first screen to final deploy.</p>
+<p>I'm finishing my Master of Computer Applications (CGPA 8.19) and I have hands-on experience from two developer roles. I care about clean interfaces, fast performance and apps people can trust.</p>
+<p>Outside client work I build my own tools: a voice assistant in Python, a weather app, and a cybersecurity awareness project about phishing.</p>
+</div>
+<div class="stats">
+<div class="stat"><b>8.19</b><span>CGPA in MCA (2024–2026)</span></div>
+<div class="stat"><b>2</b><span>Developer roles in full stack and React Native</span></div>
+<div class="stat"><b>4</b><span>Projects shipped across web, mobile and Python</span></div>
+</div>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Utility belt</h2>
+<div class="belt">
+<div class="slot"><h3>Languages</h3><div class="chips"><span>C</span><span>C++</span><span>Java</span><span>Python</span><span>JavaScript</span><span>PHP</span></div></div>
+<div class="slot"><h3>Frontend</h3><div class="chips"><span>HTML</span><span>CSS</span><span>React.js</span><span>React Native</span></div></div>
+<div class="slot"><h3>Backend</h3><div class="chips"><span>Node.js</span><span>REST APIs</span><span>Authentication</span></div></div>
+<div class="slot"><h3>Databases</h3><div class="chips"><span>MongoDB</span><span>MySQL</span><span>Firebase</span></div></div>
+<div class="slot"><h3>Libraries</h3><div class="chips"><span>Pandas</span><span>NumPy</span></div></div>
+<div class="slot"><h3>Tools</h3><div class="chips"><span>Git</span><span>GitHub</span><span>VS Code</span></div></div>
+</div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<h2>Missions</h2>
+<div class="log">
+<div class="job">
+<h3>Full Stack / React Native Developer</h3>
+<div class="where">Hifi IT Park, Thoothukudi</div>
+<div class="when">May 2024 – Sept 2024</div>
+<ul class="pts"><li>Built mobile and web applications using React Native and frontend technologies.</li><li>Implemented API integration, authentication and database connectivity.</li><li>Optimized application performance and user experience.</li></ul>
+</div>
+<div class="job">
+<h3>Full Stack Developer Intern</h3>
+<div class="where">Digisalior</div>
+<div class="when">Aug 2022 – Feb 2023</div>
+<ul class="pts"><li>Developed responsive web and mobile applications using React Native, HTML, CSS and JavaScript.</li><li>Integrated APIs, authentication and a MySQL database.</li><li>Improved application performance and debugging.</li></ul>
+</div>
+</div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Case files</h2>
+<div class="cases">
+<article class="case"><h3>AI Voice Assistant</h3>
+<ul><li>Built an AI voice assistant with speech recognition and text-to-speech.</li><li>Automated voice commands for web search, system control and app operations.</li><li>Enabled real-time voice processing for smoother interaction.</li></ul>
+<div class="chips"><span>Python</span><span>Speech Recognition</span><span>Automation APIs</span></div></article>
+<article class="case"><h3>Weather Forecast Web App</h3>
+<ul><li>Developed a responsive forecast app with real-time API integration.</li><li>Implemented asynchronous data fetching and location-based updates.</li><li>Optimized UI performance across devices.</li></ul>
+<div class="chips"><span>React.js</span><span>REST API</span><span>JavaScript</span></div></article>
+<article class="case"><h3>Home Baking Business App</h3>
+<ul><li>Built a cross-platform mobile app for product browsing and order management.</li><li>Integrated Firebase Authentication and the Firestore database.</li><li>Designed responsive interfaces to improve the customer experience.</li></ul>
+<div class="chips"><span>React Native</span><span>Firebase</span></div></article>
+<article class="case"><h3>Cyber Security Awareness</h3>
+<ul><li>Developed an educational project that demonstrates phishing awareness concepts.</li><li>Simulated login interfaces to study web security practices and vulnerabilities.</li><li>Focused on ethical cybersecurity and user awareness.</li></ul>
+<div class="chips"><span>Web Security</span><span>Education</span></div></article>
+</div>
+</div></section>
+
+<section id="education"><div class="wrap">
+<h2>Training</h2>
+<div class="edu">
+<div class="deg"><h3>Master of Computer Applications</h3><div class="cg">8.19</div><small>CGPA · July 2024 – May 2026</small></div>
+<div class="deg"><h3>B.Sc Computer Science</h3><div class="cg">7.6</div><small>CGPA · July 2021 – May 2024</small></div>
+</div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<h2>Contact</h2>
+<p>Have a project that needs a developer who shows up? Send word and I'll reply.</p>
+<div class="links">
+<a class="btn fill" href="mailto:mathanmathan19124317@gmail.com">Email me</a>
+<a class="btn" href="tel:+916384171462">Call 6384171462</a>
+<a class="btn" href="https://github.com/massmathan4317" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div></section>
+</main>
+<footer>© Mathan P. Built in the dark, shipped in the light.</footer>
+</body>
+</html>
